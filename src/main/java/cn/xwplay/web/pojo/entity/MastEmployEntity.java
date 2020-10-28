@@ -9,10 +9,23 @@ import lombok.ToString;
 @ToString
 public class MastEmployEntity {
 
+
+    /**
+     * 既婚区分
+     */
+    private String marryType;
+    /**
+     * 既婚区分コード
+     */
+    private String marryTypeCode;
     /**
      * 直間区分（直接税と間接税との比率）
      */
-
+    private String taxRateType;
+    /**
+     * 直間区分コード
+     */
+    private String taxRateTypeCode;
     /**
      * 給与区分
      */
