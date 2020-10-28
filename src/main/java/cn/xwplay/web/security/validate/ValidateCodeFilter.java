@@ -2,7 +2,8 @@ package cn.xwplay.web.security.validate;
 
 import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.StrUtil;
-import cn.xwplay.web.security.core.properties.SecurityConstants;
+import cn.xwplay.web.properties.SecurityConstants;
+import cn.xwplay.web.properties.security.SecurityProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
@@ -37,6 +38,8 @@ public class ValidateCodeFilter extends OncePerRequestFilter implements Initiali
      */
     private final AntPathMatcher pathMatcher = new AntPathMatcher();
 
+    private final SecurityProperties securityProperties;
+
     /**
      * 初始化要拦截的url配置信息
      */
@@ -44,9 +47,9 @@ public class ValidateCodeFilter extends OncePerRequestFilter implements Initiali
     public void afterPropertiesSet() throws ServletException {
         super.afterPropertiesSet();
         urlMap.put(SecurityConstants.DEFAULT_LOGIN_PROCESSING_URL_FORM, ValidateCodeType.IMAGE);
-        addUrlToMap("/", ValidateCodeType.IMAGE);
+        addUrlToMap(securityProperties.getCode().getImage().getUrlPatterns(), ValidateCodeType.IMAGE);
         urlMap.put(SecurityConstants.DEFAULT_LOGIN_PROCESSING_URL_MOBILE, ValidateCodeType.SMS);
-        addUrlToMap("/", ValidateCodeType.SMS);
+        addUrlToMap(securityProperties.getCode().getSms().getUrlPatterns(), ValidateCodeType.SMS);
     }
 
     /**
@@ -93,6 +96,5 @@ public class ValidateCodeFilter extends OncePerRequestFilter implements Initiali
         }
         return result;
     }
-
 
 }

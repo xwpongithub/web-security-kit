@@ -2,7 +2,7 @@ package cn.xwplay.web.controller;
 
 import cn.hutool.core.util.StrUtil;
 import cn.xwplay.web.common.Response;
-import cn.xwplay.web.security.core.properties.SecurityConstants;
+import cn.xwplay.web.properties.SecurityConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.web.DefaultRedirectStrategy;

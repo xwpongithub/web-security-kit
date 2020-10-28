@@ -1,6 +1,6 @@
 package cn.xwplay.web.security.validate.sms;
 
-import cn.xwplay.web.security.core.properties.SecurityConstants;
+import cn.xwplay.web.properties.SecurityConstants;
 import cn.xwplay.web.security.validate.AbstractValidateCodeProcessor;
 import cn.xwplay.web.security.validate.ValidateCode;
 import org.springframework.stereotype.Component;

@@ -1,6 +1,6 @@
 package cn.xwplay.web.security.validate;
 
-import cn.xwplay.web.security.core.properties.SecurityConstants;
+import cn.xwplay.web.properties.SecurityConstants;
 
 /**
  * 验证码类支持类型枚举

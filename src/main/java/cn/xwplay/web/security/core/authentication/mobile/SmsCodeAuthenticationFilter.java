@@ -1,6 +1,6 @@
 package cn.xwplay.web.security.core.authentication.mobile;
 
-import cn.xwplay.web.security.core.properties.SecurityConstants;
+import cn.xwplay.web.properties.SecurityConstants;
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;

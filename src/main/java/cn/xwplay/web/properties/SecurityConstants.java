@@ -1,4 +1,4 @@
-package cn.xwplay.web.security.core.properties;
+package cn.xwplay.web.properties;
 
 /**
  * 安全框架公共常量
@@ -38,7 +38,7 @@ public interface SecurityConstants {
     /**
      * 默认登录页面
      */
-    String DEFAULT_LOGIN_PAGE_URL = "/imooc-signIn.html";
+    String DEFAULT_LOGIN_PAGE_URL = "/login.html";
 
 
 }

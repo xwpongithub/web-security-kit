@@ -1,9 +1,11 @@
 package cn.xwplay.web.security;
 
+import cn.xwplay.web.properties.security.SecurityProperties;
 import cn.xwplay.web.security.core.authentication.AbstractChannelSecurityConfig;
 import cn.xwplay.web.security.core.authentication.mobile.SmsCodeAuthenticationSecurityConfiguration;
-import cn.xwplay.web.security.core.properties.SecurityConstants;
+import cn.xwplay.web.properties.SecurityConstants;
 import cn.xwplay.web.security.validate.ValidateCodeSecurityConfiguration;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import javax.annotation.Resource;
 
 @EnableWebSecurity
+@EnableConfigurationProperties(SecurityProperties.class)
 public class SecurityConfiguration extends AbstractChannelSecurityConfig {
 
     @Resource

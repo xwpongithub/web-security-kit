@@ -12,8 +12,8 @@ import org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository;
 
 import javax.sql.DataSource;
 
-@Configuration
-@EnableSocial
+//@Configuration
+//@EnableSocial
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class SocialConfiguration extends SocialConfigurerAdapter {
 

@@ -1,0 +1,13 @@
+app:
+  security:
+    pc:
+      login-page: /login.html
+      login-response-type: REDIRECT
+    mobile:
+      login-page: /login.html
+      login-response-type: REDIRECT
+    code:
+      sms:
+        url-patterns: /
+      image:
+        url-patterns: /
