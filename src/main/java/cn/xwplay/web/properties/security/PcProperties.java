@@ -13,5 +13,6 @@ public class PcProperties {
 
     private LoginResponseType loginResponseType = LoginResponseType.JSON;
     private String loginPage = SecurityConstants.DEFAULT_LOGIN_PAGE_URL;
+    private String registerUrl;
 
 }

@@ -43,7 +43,7 @@ public class SecurityConfiguration extends AbstractChannelSecurityConfig {
                         SecurityConstants.DEFAULT_VALIDATE_CODE_URL_PREFIX+"/*",
                         SecurityConstants.DEFAULT_UNAUTHENTICATION_URL,
                         SecurityConstants.DEFAULT_LOGIN_PROCESSING_URL_MOBILE,
-                        "/login.html","/favicon.ico","/auth/*")
+                        "/login.html","/favicon.ico","/auth/*","/register.html","/register")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and()

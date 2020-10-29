@@ -3,9 +3,11 @@ app:
     pc:
       login-page: /login.html
       login-response-type: REDIRECT
+      register-url: /register.html
     mobile:
       login-page: /login.html
       login-response-type: REDIRECT
+      register-url: /register.html
     code:
       sms:
         url-patterns: /

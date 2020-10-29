@@ -14,6 +14,7 @@ public class DefaultSpringSocialConfigurer extends SpringSocialConfigurer {
   protected <T> T postProcess(T object) {
     SocialAuthenticationFilter filter = (SocialAuthenticationFilter)object;
     filter.setFilterProcessesUrl(filterProcessUrl);
+    filter.setSignupUrl("/register.html");
     return (T)filter;
   }
 }
