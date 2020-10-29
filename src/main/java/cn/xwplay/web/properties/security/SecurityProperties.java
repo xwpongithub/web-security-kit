@@ -14,5 +14,6 @@ public class SecurityProperties {
   private PcProperties pc = new PcProperties();
   private MobileProperties mobile = new MobileProperties();
   private ValidateCodeProperties code = new ValidateCodeProperties();
+  private SocialProperties social = new SocialProperties();
 
 }

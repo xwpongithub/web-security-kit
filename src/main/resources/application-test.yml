@@ -11,3 +11,39 @@ app:
         url-patterns: /
       image:
         url-patterns: /
+    social:
+      qq:
+        app-id:
+        app-secret:
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/learning-spring-security
+    username: root
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      # 自动提交
+      auto-commit: false
+      # 等待连接池分配链接的最大时间时长,超过时抛出sqlexception
+      connection-timeout: 30000
+      # 最小连接数
+      minimum-idle: 5
+      # 最大连接数
+      maximum-pool-size: 20
+      # 连接超时的最大时长，超时则会被释放，默认10分钟
+      idle-timeout: 600000
+      # 连接池名称
+      pool-name: DataSourceHikariCP
+      # 连接的生命时长，超时且没有被使用则被释放，默认30分钟
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+      data-source-properties:
+        serverTimezone: UTC
+        characterEncoding: utf-8
+        useUnicode: true
+        useSSL: true
+        allowMultiQueries: true
+        autoReconnect: true
+        useLegacyDatetimeCode: true
+        nullCatalogMeansCurrent: true
+        rewriteBatchedStatements: true

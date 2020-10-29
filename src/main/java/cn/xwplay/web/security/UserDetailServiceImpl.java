@@ -8,11 +8,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.social.security.SocialUser;
+import org.springframework.social.security.SocialUserDetails;
+import org.springframework.social.security.SocialUserDetailsService;
 import org.springframework.stereotype.Service;
 
 @Service("userDetailService")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class UserDetailServiceImpl implements UserDetailsService {
+public class UserDetailServiceImpl implements
+        UserDetailsService, SocialUserDetailsService {
 
   private final PasswordEncoder passwordEncoder;
 
@@ -29,7 +33,13 @@ public class UserDetailServiceImpl implements UserDetailsService {
             .build();
   }
 
-  // AffirmativeBased  or的关系，只要一个过就过
+  @Override
+  public SocialUserDetails loadUserByUserId(String userId) throws UsernameNotFoundException {
+    String password = passwordEncoder.encode("123456");
+    return new SocialUser(userId,password,true,true,true,true,AuthorityUtils.commaSeparatedStringToAuthorityList("admin,manager"));
+  }
+
+// AffirmativeBased  or的关系，只要一个过就过
   // ConsensusBased 比较投通过和不通过的voter的个数，哪种意见的voter个数多就按哪种来
   // UnanimousBased and的关系，只要一个不过就不过
 

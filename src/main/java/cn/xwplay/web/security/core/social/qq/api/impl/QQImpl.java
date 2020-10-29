@@ -21,13 +21,15 @@ public class QQImpl extends AbstractOAuth2ApiBinding implements QQ {
     String result = getRestTemplate().getForObject(getOpenIdUrl,String.class);
     System.out.println("请求openid返回值：");
     System.out.println(result);
-    this.openId = StrUtil.subBetween(result,"\"openid\":","}");
+    this.openId = StrUtil.subBetween(result,"\"openid\":\"","\"}");
   }
 
   @Override
   public UserInfo getUserInfo() {
     String getUserInfoUrl = StrUtil.format(URL_USER_INFO,appId,openId);
-    return getRestTemplate().getForObject(getUserInfoUrl,UserInfo.class);
+    UserInfo userInfo =  getRestTemplate().getForObject(getUserInfoUrl,UserInfo.class);
+    userInfo.setOpenId(openId);
+    return userInfo;
   }
 
 }
